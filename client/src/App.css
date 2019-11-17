@@ -24,3 +24,11 @@
 .todo_item_complete {
   text-decoration: line-through;
 }
+
+.header-nav {
+  margin: 0 auto;
+}
+
+.header-links {
+  text-decoration: none;
+}
