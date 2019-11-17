@@ -20,3 +20,7 @@
 .App-link {
   color: #09d3ac;
 }
+
+.todo_item_complete {
+  text-decoration: line-through;
+}
