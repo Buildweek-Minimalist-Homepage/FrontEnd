@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Todo from './components/Todo';
 import './App.css';
 import {SearchBar} from './components/SearchBar';
+import SignInLogIn from './signInLogIn'
 // import Clock from './components/Time'
 // import Header from './components/Header';
 
 import {
   BrowserRouter as Router,
   Route,
-  Link  
+  NavLink,
+  Link
 } from 'react-router-dom';
 
 
@@ -18,9 +20,10 @@ import {
 class App extends React.Component {
   render() {
     return (
+      
       <Router>
+        <SignInLogIn/>
       <div>
-        <SignInForm/>
         {/* <Header/> */}
         <SearchBar/>
         <h2>Welcome to testing!</h2>

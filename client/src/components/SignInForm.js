@@ -4,13 +4,9 @@ import { Link } from 'react-router-dom';
 
 const SignInForm = props => {
 
-  //set name and change namen
   const [name, setName] = useState('')
-  //set email and change email
   const [email, setEmail] = useState('')
-  // set a password and change password
   const [password, setpassword] = useState('')
-  //creates a new form
   const   newForm = () => {
     setName('');
     setEmail('');

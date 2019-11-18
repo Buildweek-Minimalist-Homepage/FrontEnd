@@ -1,14 +1,12 @@
-import React from'react'
 
 function ReturnInfo(props) {
   return(
     props.members.map(
       member => (
-        <div key = {member.id}>
-          <p>Name:{member.name}</p>
-          <p>Email:{member.email}</p>
-          <p>Role: {member.role}</p>
-        </div>
+      console.log (`key = ${member.id}
+          Name: ${member.name}
+          Email:${member.email}
+          Role: ${member.role}`)
       )
     )
   )
