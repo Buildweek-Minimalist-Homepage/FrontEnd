@@ -1,6 +1,6 @@
 import React, {useReducer, useRef} from 'react';
 import {reducer, initialState} from '../reducers/reducer';
-import { render } from '@testing-library/react';
+
 
 export const SearchBar = () => {
     // const [state, dispatch] = useReducer()
@@ -16,14 +16,14 @@ export const SearchBar = () => {
         
     // }
 
-    render();
+    
     {
         return(
             <div>
                 <form action='https://www.google.com/search' class='searchForm' method='get' name='searchform' target=''>
                     <input name='sitesearch' type='hidden' value=''/>
-                    <input autoComplete='on' class='form-control search' name='q' placeholder='Search' required='required' type='text'/>
-                    <button class='button' type='submit'>Search</button>
+                    <input autoComplete='on' className='form-control search' name='q' placeholder='Search' required='required' type='text'/>
+                    <button className='search-button' type='submit'>Search</button>
                 </form>
             </div>
         )

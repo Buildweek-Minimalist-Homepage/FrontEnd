@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from './components/Todo';
 import './App.css';
 import {SearchBar} from './components/SearchBar';
-import Clock from './components/Time'
+// import Clock from './components/Time'
 // import Header from './components/Header';
 
 import {
@@ -19,7 +19,7 @@ class App extends React.Component {
         {/* <Header/> */}
         <SearchBar/>
         <h2>Welcome to testing!</h2>
-        <Clock />
+        {/* <Clock /> */}
         <Todo/>
       </div>
       </Router>
