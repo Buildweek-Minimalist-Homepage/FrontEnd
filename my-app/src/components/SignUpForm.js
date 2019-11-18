@@ -10,7 +10,6 @@ const Form = props => {
   const [email, setEmail] = useState('')
   // set a password and change password
   const [password, setpassword] = useState('')
-  const  [showText, setShowText] = useState(false);
   //creates a new form
   const   newForm = () => {
     setName('');
@@ -26,7 +25,7 @@ const Form = props => {
       newForm()}} className="FormFields">
 
 
-{showText && <>
+
       <div className="FormField">
       <label htmlFor = "name" className="FormField__Label">Name</label>
       <input 
@@ -61,8 +60,8 @@ const Form = props => {
         placeholder="Enter your password"
         required onChange = {(event) => setpassword(event.target.value)}/>
         </div>
-        </>}
         
+       
               <div className="FormField">
                   <button className="FormField__Button mr-20">Sign In</button> 
                   <Link to="/" className="FormField__Link">Create an account</Link>
