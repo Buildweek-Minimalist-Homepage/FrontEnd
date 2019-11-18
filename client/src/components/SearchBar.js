@@ -22,8 +22,8 @@ export const SearchBar = () => {
             <div>
                 <form action='https://www.google.com/search' class='searchForm' method='get' name='searchform' target=''>
                     <input name='sitesearch' type='hidden' value=''/>
-                    <input autoComplete='on' class='form-control search' name='q' placeholder='Search' required='required' type='text'/>
-                    <button class='button' type='submit'>Search</button>
+                    <input autoComplete='on' className='form-control search' name='q' placeholder='Search' required='required' type='text'/>
+                    <button className='search-button' type='submit'>Search</button>
                 </form>
             </div>
         )

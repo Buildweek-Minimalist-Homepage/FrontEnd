@@ -2,9 +2,7 @@ import React from 'react';
 import Todo from './components/Todo';
 import './App.css';
 import {SearchBar} from './components/SearchBar';
-import SignInForm from './components/SignInForm';
-import ReturnInfo from './components/ReturnInfo'
-//import Clock from './components/Time'
+// import Clock from './components/Time'
 // import Header from './components/Header';
 
 import {
