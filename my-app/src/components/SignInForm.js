@@ -10,7 +10,6 @@ const SignInForm = props => {
   const [email, setEmail] = useState('')
   // set a password and change password
   const [password, setpassword] = useState('')
-  const  [showText, setShowText] = useState(false);
   //creates a new form
   const   newForm = () => {
     setName('');

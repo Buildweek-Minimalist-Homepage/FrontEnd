@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from './components/SignUpForm';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import SignInForm from './components/SignInForm';
+import ReturnInfo from './components/ReturnInfo'
 
 import './App.css';
 
@@ -22,11 +23,10 @@ function App() {
 
     //What will apply changes to member
     setMembers([...members, member])
+    console.log(member)
   }
 
-  //return the components that will be displayed 
-  // Form is the input that will receive information (email, name, role)
-  // TeamList will display the input information from Form
+
   return(
     <Router basename="/react-auth-ui/">
     <div className = "App">
@@ -36,11 +36,11 @@ function App() {
                   <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> 
                   or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
               </div>
-      
-              <Route exact path="/" component={Form}>
+              <Route exact path="/" render={()=> <Form  addMember = {addMember}/>}>
               </Route>
-              <Route path="/sign-in" component={SignInForm}>
+              <Route path="/sign-in" render={()=> <SignInForm  addMember = {addMember}/>}>
               </Route>
+              <ReturnInfo members ={members}/>
       </div>
     </div>
     </Router>
@@ -49,6 +49,7 @@ function App() {
 
 export default App
 /*
-      <Form addMember = {addMember}/>
-      <TeamList members ={members}/>
+      <Form  addMember = {addMember}/>
+      <SignInForm  addMember = {addMember}/>
+      <ReturnInfo members ={members}/>
 */

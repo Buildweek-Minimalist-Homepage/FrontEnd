@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
 
+
 const Form = props => {
 
   //set name and change namen
@@ -63,8 +64,8 @@ const Form = props => {
         
        
               <div className="FormField">
-                  <button className="FormField__Button mr-20">Sign In</button> 
-                  <Link to="/" className="FormField__Link">Create an account</Link>
+                  <button className="FormField__Button mr-20">Create an account</button> 
+                  <Link to="/sign-in" className="FormField__Link">Sign In</Link>
               </div>
               
       </form>  
