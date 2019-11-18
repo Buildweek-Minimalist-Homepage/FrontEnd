@@ -3,18 +3,18 @@ import {reducer, initialState} from '../reducers/reducer';
 import { render } from '@testing-library/react';
 
 export const SearchBar = () => {
-    const [state, dispatch] = useReducer()
-    const inputRef = useRef();
+    // const [state, dispatch] = useReducer()
+    // const inputRef = useRef();
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        dispatch({type: 'ADD', name: inputRef.current.value});
-        inputRef.current.value = '';
-    };
+    // const handleSubmit = e => {
+    //     e.preventDefault()
+    //     dispatch({type: 'ADD', name: inputRef.current.value});
+    //     inputRef.current.value = '';
+    // };
 
-    const changeHandler = event => {
+    // const changeHandler = event => {
         
-    }
+    // }
 
     render();
     {
