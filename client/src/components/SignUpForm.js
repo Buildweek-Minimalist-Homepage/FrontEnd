@@ -51,7 +51,7 @@ const Form = props => {
       <input 
         id = "password"
         name = "password"
-        type = "text"
+        type = "password"
         value = {password}
         className="FormField__Input" 
         placeholder="Enter your password"
