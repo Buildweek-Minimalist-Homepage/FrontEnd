@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Todo from './components/Todo';
 import './App.css';
 import {SearchBar} from './components/SearchBar';
-import SignInLogIn from './signInLogIn'
+//import SignInLogIn from './signInLogIn'
 // import Clock from './components/Time'
 // import Header from './components/Header';
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
       
       <Router>
-        <SignInLogIn/>
+     
       <div>
         {/* <Header/> */}
         <SearchBar/>
