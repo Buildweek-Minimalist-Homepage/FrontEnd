@@ -2,7 +2,9 @@ import React from 'react';
 import Todo from './components/Todo';
 import './App.css';
 import {SearchBar} from './components/SearchBar';
-import Clock from './components/Time'
+import SignInForm from './components/SignInForm';
+import ReturnInfo from './components/ReturnInfo'
+//import Clock from './components/Time'
 // import Header from './components/Header';
 
 import {
@@ -11,15 +13,20 @@ import {
   Link  
 } from 'react-router-dom';
 
+
+
+
+
 class App extends React.Component {
   render() {
     return (
       <Router>
       <div>
+        <SignInForm/>
         {/* <Header/> */}
         <SearchBar/>
         <h2>Welcome to testing!</h2>
-        <Clock />
+        {/* <Clock /> */}
         <Todo/>
       </div>
       </Router>

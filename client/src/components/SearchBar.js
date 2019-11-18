@@ -1,6 +1,6 @@
 import React, {useReducer, useRef} from 'react';
 import {reducer, initialState} from '../reducers/reducer';
-import { render } from '@testing-library/react';
+
 
 export const SearchBar = () => {
     // const [state, dispatch] = useReducer()
@@ -16,7 +16,7 @@ export const SearchBar = () => {
         
     // }
 
-    render();
+    
     {
         return(
             <div>
