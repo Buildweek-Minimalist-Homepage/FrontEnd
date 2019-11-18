@@ -8,7 +8,7 @@
 }
 
 .App__Form {
-  margin-top: 10%;
+  margin-top: 20%;
   width: 50%;
   height: 50%;
   background-color: darkslategrey;
@@ -88,16 +88,6 @@
   display: inline-block;
   border-bottom: 1.5px solid grey;
   padding-bottom: 5px;
-}
-
-.FormField__CheckboxLabel {
-  color: grey;
-  font-size: .9em;
-}
-
-.FormField__Checkbox {
-  position: relative;
-  top: 1.5px;
 }
 
 .FormField__TermsLink {
