@@ -3,31 +3,35 @@ import React, { Component } from 'react';
 
 
 export default class Clock extends Component {
-    state = {
-        time: new Date()
-    };
-
-    componentDidMount() {
-        this.timerID = setInterval(() => this.tick(), 1000);
+    render () {
+    const date = new Date()
+    const hours = date.getHours()
+    const rightNow = date.toLocaleTimeString()
+    let timeOfDay
+    const h1Style = {
+      fontSize: '40px',
     }
-
-    componentWillUnmount() {
-        clearInterval(this.timerID);
-    }
-
-    tick() {
-        this.setState({
-            time: new Date()
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Hello, User!</h1>
-                <h2>It is {this.state.time.toLocaleTimeString()}</h2>
-            </div>
-        );
-    }
+    
+    if (hours < 12) {
+      timeOfDay = "Morning"
+    } else if (hours >= 12 && hours < 17) {
+       timeOfDay = "afternoon"
+    } else {
+       timeOfDay = "night"
+    } 
+    return (
+      <div>
+        <h1 style={h1Style}>Good {timeOfDay.split(' ')
+                         .map(w => w[0].toUpperCase() + w.substr(1).toLowerCase()).join(" ")} </h1>
+        <h2>{rightNow}</h2>
+      </div>
+      )
+  }
 }
+  
+  function tick () {
+      ReactDOM.render(<App />, document.getElementById('root'))
+  }
+  
+  setInterval(tick, 1000);
 
