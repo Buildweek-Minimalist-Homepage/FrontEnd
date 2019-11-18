@@ -11,7 +11,7 @@ body {
   background:
     url('https://wallpaperaccess.com/full/31189.jpg')  center no-repeat ;
   background-size: cover;
-  filter: blur(5px);
+  backdrop-filter: blur(5px);
   
 }
 
