@@ -6,7 +6,7 @@ import ReturnInfo from './components/ReturnInfo'
 
 import './signInLogIn.css';
 
-function signInLogIn() {
+function SignInLogIn() {
   //applying a useState hook and setting a state peoperty to members
  const [members, setMembers] = useState([]);
 
@@ -34,9 +34,9 @@ function signInLogIn() {
       <div className="App__Form">
               <div className="FormTitle">
                   <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> 
-                  or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
+                  or <NavLink exact to="/sign-up" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
               </div>
-              <Route exact path="/" render={()=> <Form  addMember = {addMember}/>}>
+              <Route exact path="/sign-up" render={()=> <Form  addMember = {addMember}/>}>
               </Route>
               <Route path="/sign-in" render={()=> <SignInForm  addMember = {addMember}/>}>
               </Route>
@@ -47,4 +47,4 @@ function signInLogIn() {
   )
 }
 
-export default signInLogIn
+export default SignInLogIn

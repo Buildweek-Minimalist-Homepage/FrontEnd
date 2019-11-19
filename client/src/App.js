@@ -5,13 +5,13 @@ import {SearchBar} from './components/SearchBar';
 //import SignInLogIn from './signInLogIn'
 // import Clock from './components/Time'
 // import Header from './components/Header';
-import QuotesWidget from './components/Quotes'
 import {
   BrowserRouter as Router,
   Route,
   NavLink,
   Link
 } from 'react-router-dom';
+import SignInLogIn from './SignInLogIn';
 
 
 
@@ -22,14 +22,14 @@ class App extends React.Component {
     return (
       
       <Router>
-     <QuotesWidget/>
       <div>
-      <Link to="/sign-in" className="FormField__Link">Sign In</Link>
+      <SignInLogIn/>
         {/* <Header/> */}
         <SearchBar/>
         <h2>Welcome to testing!</h2>
         {/* <Clock /> */}
         <Todo/>
+
       </div>
       </Router>
     );
