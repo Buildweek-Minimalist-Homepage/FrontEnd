@@ -31,24 +31,22 @@ function App() {
 
   return(
     <div className = "App">
-      <div className="App__Aside"></div>
-      <div className="App__Form">
-              <div className="FormTitle">
+ 
+              <nav className="FormTitle">
                   <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> 
                   or <NavLink exact to="/register" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
-              </div>
-              <Route exact path="/register" render={()=> <Form  addMember = {addMember}/>}/>
+              </nav>
+              <Route exact path="/register" component={Form}/>
               
-              <Route path="/sign-in" render={()=> <SignInForm  addMember = {addMember}/>}/>
+              <Route exact path="/sign-in" component={SignInForm}/>
               
-              <ReturnInfo members ={members}/>
+              {/* <ReturnInfo members ={members}/> */}
+
+
+                <PrivateRoute exact path='/homepage' component={HomePage}/>
 
               
-              
-      </div>
-      <div>
-      <PrivateRoute path='/homepage' component={HomePage}/>
-      </div>
+
     </div>
   )
 }
