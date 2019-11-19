@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
+import axiosWithAuth from '../utils/useAxiosAuth';
 
+import HomePageContext from '../contexts/HomePageContext'
 
 const SignInForm = props => {
 
@@ -12,11 +14,14 @@ const SignInForm = props => {
     setEmail('');
     setpassword('');
   }
-  
+  //add a submit handler
+  //pass object as argument 
+  //handle component with one useState (optional)
   
   return(
 <div className="FormCenter">
     <form onSubmit = {(event) => {
+      event.preventDefault()
       props.addMember (event, name, email, password) 
       newForm()}} className="FormFields">
 
@@ -39,7 +44,7 @@ const SignInForm = props => {
       <input 
         id = "password"
         name = "password"
-        type = "text"
+        type = "password"
         value = {password}
         className="FormField__Input" 
         placeholder="Enter your password"
@@ -49,7 +54,7 @@ const SignInForm = props => {
         
               <div className="FormField">
                   <button className="FormField__Button mr-20">Sign In</button> 
-                  <Link to="/" className="FormField__Link">Create an account</Link>
+                  <Link to="/homepage" className="FormField__Link">Create an account</Link>
               </div>
               
       </form>  

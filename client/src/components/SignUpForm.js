@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Form = props => {
 
+
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setpassword] = useState('')
