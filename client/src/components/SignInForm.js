@@ -20,7 +20,7 @@ const SignInForm = props => {
       props.addMember (event, name, email, password) 
       newForm()}} className="FormFields">
 
-
+type
 
       <div className="FormField">
       <label htmlFor = "email" className="FormField__Label">Email</label>

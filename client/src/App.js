@@ -5,7 +5,7 @@ import {SearchBar} from './components/SearchBar';
 //import SignInLogIn from './signInLogIn'
 // import Clock from './components/Time'
 // import Header from './components/Header';
-
+import QuotesWidget from './components/Quotes'
 import {
   BrowserRouter as Router,
   Route,
@@ -22,8 +22,9 @@ class App extends React.Component {
     return (
       
       <Router>
-     
+     <QuotesWidget/>
       <div>
+      <Link to="/sign-in" className="FormField__Link">Sign In</Link>
         {/* <Header/> */}
         <SearchBar/>
         <h2>Welcome to testing!</h2>
