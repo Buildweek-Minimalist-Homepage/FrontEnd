@@ -1,32 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Form from './components/SignUpForm';
 import {Route, NavLink } from 'react-router-dom';
 import SignInForm from './components/SignInForm';
 import ReturnInfo from './components/ReturnInfo';
 import {PrivateRoute} from './utils/PrivateRoute';
 import HomePage from './components/HomePage';
+import HomePageContext from './contexts/HomePageContext';
 
 import './signInLogIn.css';
+import { axiosWithAuth } from './utils/useAxiosAuth';
 
 function App() {
-  //applying a useState hook and setting a state peoperty to members
- const [members, setMembers] = useState([]);
+//   //applying a useState hook and setting a state peoperty to members
+//  const [members, setMembers] = useState([]);
 
-  const addMember = (e, name, email, password) => {
-    e.preventDefault();
+//   const addMember = (e, name, email, password) => {
+//     e.preventDefault();
 
-    //defining member. The id is predetermined by a timestamp
-    const member = {
-      id: Date.now(),
-      name, 
-      email,
-      password
-    }
+//     //defining member. The id is predetermined by a timestamp
+//     const member = {
+//       id: Date.now(),
+//       name, 
+//       email,
+//       password
+//     }
 
-    //What will apply changes to member
-    setMembers([...members, member])
-    console.log(member)
-  }
+//     //What will apply changes to member
+//     setMembers([...members, member])
+//     console.log(member)
+//   }
+
+const {setHomePage} = useContext(HomePageContext);
+
+useEffect(() => {
+  axiosWithAuth().get('/users')
+    .then(res => {
+      console.log('response data', res.data)
+      setHomePage(res.data)
+    })
+}, [])
 
 
   return(

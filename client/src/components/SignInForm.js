@@ -7,7 +7,7 @@ import HomePageContext from '../contexts/HomePageContext';
 const SignInForm = ({history}) => {
   const { setIsLoggedIn } = useContext(HomePageContext);
 
-  const [creds, setCreds] = useState({ name: '', email: '', password: ''});
+  const [creds, setCreds] = useState({ email: '', password: ''});
 
   const handleChange = e => {
     setCreds({ ...creds, [e.target.name] : e.target.value});
