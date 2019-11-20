@@ -20,7 +20,7 @@ export const SearchBar = () => {
     {
         return(
             <div>
-                <form action='https://www.google.com/search' class='searchForm' method='get' name='searchform' target=''>
+                <form action='https://www.google.com/search' className='searchForm' method='get' name='searchform' target=''>
                     <input name='sitesearch' type='hidden' value=''/>
                     <input autoComplete='on' className='form-control search' name='q' placeholder='Search' required='required' type='text'/>
                     <button className='search-button' type='submit'>Search</button>
@@ -29,3 +29,5 @@ export const SearchBar = () => {
         )
     }
 }
+
+export default SearchBar;

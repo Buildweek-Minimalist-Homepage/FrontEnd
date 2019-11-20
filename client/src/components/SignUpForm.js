@@ -1,25 +1,42 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import {axiosWithAuth} from '../utils/useAxiosAuth';
 
 
 
-const Form = props => {
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setpassword] = useState('')
-  const   newForm = () => {
-    setName('');
-    setEmail('');
-    setpassword('');
+const Form = ({history}) => {
+  const [creds, setCreds] = useState({ name: '', email: '', password: ''});
+
+  const handleChange = e => {
+    setCreds({...creds, [e.target.name]: e.target.value});
   }
+
+  const signup = e => {
+    e.preventDefault();
+    console.log(creds);
+    axiosWithAuth()
+      .post('/auth/register', creds)
+      .then(res => {
+        console.log(res.data);
+        history.push('/login');
+      })
+      .catch(err => console.error(err));
+  };
+
+  // const [name, setName] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [password, setpassword] = useState('')
+  // const   newForm = () => {
+  //   setName('');
+  //   setEmail('');
+  //   setpassword('');
+  // }
   
   
   return(
 <div className="FormCenter">
-    <form onSubmit = {(event) => {
-      props.addMember (event, name, email, password) 
-      newForm()}} className="FormFields">
+    <form onSubmit = {signup} className="FormFields">
 
 
 
@@ -31,7 +48,8 @@ const Form = props => {
         type = "text"
         placeholder="Enter your full name"
         className="FormField__Input" 
-        required onChange = {(event) => setName(event.target.value)}/>
+        value={creds.name}
+        required onChange = {handleChange}/>
         </div>
 
       <div className="FormField">
@@ -42,8 +60,8 @@ const Form = props => {
         type = "email"
         className="FormField__Input" 
         placeholder="Enter your email"
-        value = {email}
-        required onChange = {(event) => setEmail(event.target.value)}/>
+        value = {creds.email}
+        required onChange = {handleChange}/>
         </div>
 
       <div className="FormField">
@@ -51,11 +69,11 @@ const Form = props => {
       <input 
         id = "password"
         name = "password"
-        type = "password"
-        value = {password}
+        type = "text"
+        value = {creds.password}
         className="FormField__Input" 
         placeholder="Enter your password"
-        required onChange = {(event) => setpassword(event.target.value)}/>
+        required onChange = {handleChange}/>
         </div>
         
        

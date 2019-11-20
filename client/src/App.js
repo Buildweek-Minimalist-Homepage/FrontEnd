@@ -1,38 +1,66 @@
-import React, {useState} from 'react';
-import Todo from './components/Todo';
-import './App.css';
-import {SearchBar} from './components/SearchBar';
-//import SignInLogIn from './signInLogIn'
-// import Clock from './components/Time'
-// import Header from './components/Header';
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink,
-  Link
-} from 'react-router-dom';
-import SignInLogIn from './SignInLogIn';
+import React, { useState, useEffect, useContext } from 'react';
+import Form from './components/SignUpForm';
+import {Route, NavLink } from 'react-router-dom';
+import SignInForm from './components/SignInForm';
+import ReturnInfo from './components/ReturnInfo';
+import {PrivateRoute} from './utils/PrivateRoute';
+import HomePage from './components/HomePage';
+import HomePageContext from './contexts/HomePageContext';
+
+import './signInLogIn.css';
+import { axiosWithAuth } from './utils/useAxiosAuth';
+
+function App() {
+//   //applying a useState hook and setting a state peoperty to members
+//  const [members, setMembers] = useState([]);
+
+//   const addMember = (e, name, email, password) => {
+//     e.preventDefault();
+
+//     //defining member. The id is predetermined by a timestamp
+//     const member = {
+//       id: Date.now(),
+//       name, 
+//       email,
+//       password
+//     }
+
+//     //What will apply changes to member
+//     setMembers([...members, member])
+//     console.log(member)
+//   }
+
+const {setHomePage} = useContext(HomePageContext);
+
+useEffect(() => {
+  axiosWithAuth().get('/users')
+    .then(res => {
+      console.log('response data', res.data)
+      setHomePage(res.data)
+    })
+}, [])
 
 
+  return(
+    <div className = "App">
+ 
+              <nav className="FormTitle">
+                  <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> 
+                  or <NavLink exact to="/register" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
+              </nav>
+              <Route exact path="/register" component={Form}/>
+              
+              <Route exact path="/sign-in" component={SignInForm}/>
+              
+              {/* <ReturnInfo members ={members}/> */}
 
 
+                <PrivateRoute exact path='/homepage' component={HomePage}/>
 
-class App extends React.Component {
-  render() {
-    return (
-      
-      <Router>
-      <div>
-      <SignInLogIn/>
-        {/* <Header/> */}
-        <SearchBar/>
-        <h2>Welcome to testing!</h2>
-        {/* <Clock /> */}
-        <Todo/>
+              
 
-      </div>
-      </Router>
-    );
-  }
+    </div>
+  )
 }
+
 export default App;
