@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
-
+const TimeContainer = styled.div`
+  position: fixed;
+  bottom: 550px;
+`
 
 export default class Clock extends Component {
     render () {
