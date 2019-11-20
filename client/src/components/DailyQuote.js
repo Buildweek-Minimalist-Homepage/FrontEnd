@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import styled from "styled-components";
+import { array } from 'prop-types';
 
 const Container1 = styled.div`
 textAlign: "center";
@@ -29,13 +30,16 @@ const DailyQuote = () => {
   // })
   
   useEffect(()=> {
+    
+    
     axios
-    //filler API from Nasa Apod assignemnt until we can get backend to create gateway work-around for CORS error
-    .get('https://api.nasa.gov/planetary/apod?api_key=w420QqAmmrBhoyGgNXdqayiuPuDmQA0iBGIs3nJO')
+    .get('https://minimalist-homepage.herokuapp.com/api/quote')
     .then(response => {
-      console.log(response.data.title)
-      setQuote(response.data.title)
-      // setAuthor(response)
+      console.log(response.data.results)
+      // let quotesArr = response.data.results;
+      // const randomQuote = () => 
+      //   quotesArr[Math.floor(Math.random() * quotesArr.length)];
+      // setQuote(randomQuote())
     })
     .catch(error => {
       console.log(error, 'we could not find the quote of the day')
