@@ -55,7 +55,7 @@ useEffect(() => {
               {/* <ReturnInfo members ={members}/> */}
 
 
-                <PrivateRoute exact path='/homepage' component={HomePage}/>
+                <Route exact path='/homepage' component={HomePage}/>
 
               
 

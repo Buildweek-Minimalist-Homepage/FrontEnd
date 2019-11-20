@@ -13,10 +13,9 @@ const Form = ({history}) => {
   }
 
   const signup = e => {
-    e.preventDefault();
+
     console.log(creds);
-    axiosWithAuth()
-      .post('/auth/register', creds)
+    axiosWithAuth().post('/auth/register', creds)
       .then(res => {
         console.log(res.data);
         history.push('/login');
