@@ -46,15 +46,15 @@ const SignInForm = ({history}) => {
 
 
       <div className="FormField">
-      <label htmlFor = "email" className="FormField__Label">Email</label>
+      
       <input 
         id = "email"
         name = "email"
         type = "email"
-        className="FormField__Input" 
+        // className="FormField__Input" 
         placeholder="Enter your email"
         value = {creds.email}
-        required onChange = {handleChange}/>
+        onChange = {handleChange}/>
         </div>
 
       <div className="FormField">
@@ -64,9 +64,9 @@ const SignInForm = ({history}) => {
         name = "password"
         type = "password"
         value = {creds.password}
-        className="FormField__Input" 
+        // className="FormField__Input" 
         placeholder="Enter your password"
-        required onChange = {handleChange}/>
+        onChange = {handleChange}/>
         </div>
         
         
