@@ -31,7 +31,7 @@ function SignInLogIn() {
 
   return(
     <Router basename="/react-auth-ui/">
-    <div className = "App">
+    <div className = "signInLogIn">
       <div className="App__Aside"></div>
       <div className="App__Form">
               <div className="FormTitle">

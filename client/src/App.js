@@ -42,8 +42,9 @@ useEffect(() => {
 
 
   return(
-    <div className = "App">
- 
+    <div className = "signInLogIn">
+    <div className="App__Aside"></div>
+    <div className="App__Form">
               <nav className="FormTitle">
                   <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> 
                   or <NavLink exact to="/register" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
@@ -57,7 +58,7 @@ useEffect(() => {
 
                 <Route exact path='/homepage' component={HomePage}/>
 
-              
+                </div>       
 
     </div>
   )
