@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const TodoContainer = styled.div`
   position: fixed;
-  bottom: 350px;
+  bottom: 200px;
 `
 
 const Todo = () => {

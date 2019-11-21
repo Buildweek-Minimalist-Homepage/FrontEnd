@@ -16,7 +16,7 @@ align-items: center;
 const HomePage = () => {
     return (
       <HomeContainer>
-        {/* <Header/> */}
+        <Header/>
         <SearchBar/>
         <Todo/>
         <DailyQuote/>

@@ -31,6 +31,7 @@ const QuoteCard = styled.div`
 
 const Quote = styled.p`
 color: darkGrey;
+font-weight: bold;
 text-align: center;
 margin: 2% auto;
 width: 500px;
