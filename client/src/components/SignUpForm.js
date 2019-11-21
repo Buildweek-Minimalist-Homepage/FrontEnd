@@ -13,10 +13,9 @@ const Form = ({history}) => {
   }
 
   const signup = e => {
-    e.preventDefault();
+
     console.log(creds);
-    axiosWithAuth()
-      .post('/auth/register', creds)
+    axiosWithAuth().post('/auth/register', creds)
       .then(res => {
         console.log(res.data);
         history.push('/login');
@@ -78,7 +77,9 @@ const Form = ({history}) => {
         
        
               <div className="FormField">
+                <Link to='/sign-in'>
                   <button className="FormField__Button mr-20">Create an account</button> 
+                </Link>
                   <Link to="/sign-in" className="FormField__Link">Sign In</Link>
               </div>
               
