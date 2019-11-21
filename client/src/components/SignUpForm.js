@@ -77,7 +77,9 @@ const Form = ({history}) => {
         
        
               <div className="FormField">
+                <Link to='/sign-in'>
                   <button className="FormField__Button mr-20">Create an account</button> 
+                </Link>
                   <Link to="/sign-in" className="FormField__Link">Sign In</Link>
               </div>
               
