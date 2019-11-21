@@ -19,7 +19,7 @@ const SignInForm = ({history}) => {
     axiosWithAuth()
       .post('/auth/login', creds)
       .then(res => {
-        console.log(creds);
+        console.log(res);
         localStorage.setItem('token', res.data.token);
         setIsLoggedIn(true);
         history.push('/homepage');

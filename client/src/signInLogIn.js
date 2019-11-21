@@ -47,10 +47,10 @@ function SignInLogIn() {
 
 
   return(
-    <SignInLogInForm>
-    <AppAside/>
-    <AppForm>
-              <FormTitle>
+    <div className = "App">
+    <div className="App__Aside"></div>
+    <div className="App__Form">
+              <div className="FormTitle">
                   <NavLink to="/sign-in" 
                   activeClassName="FormTitle__Link--Active" 
                   className="FormTitle__Link">Sign In</NavLink> 
@@ -58,7 +58,7 @@ function SignInLogIn() {
                   or <NavLink exact to="/register" 
                   activeClassName="FormTitle__Link--Active" 
                   className="FormTitle__Link">Sign Up</NavLink>
-              </FormTitle>
+              </div>
               <Route exact path="/register" component={Form}/>
               
               <Route exact path="/sign-in" component={SignInForm}/>
@@ -69,8 +69,8 @@ function SignInLogIn() {
                 <Route exact path='/homepage' component={HomePage}/>
 
               
-                </AppForm>
-    </SignInLogInForm>
+                </div>
+    </div>
   )
 }
 

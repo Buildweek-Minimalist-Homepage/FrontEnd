@@ -1,4 +1,4 @@
-/*
+
 .signInLogIn {
     height: 100vh;
     display: flex;
@@ -24,7 +24,7 @@
   .FormField {
     margin-bottom: 40px;
   }
-   */
+  
   .FormTitle {
     color: grey;
     font-weight: 300;
