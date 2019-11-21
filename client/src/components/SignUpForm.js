@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {axiosWithAuth} from '../utils/useAxiosAuth';
-
+import styled, { css } from 'styled-components'
 
 
 
@@ -32,10 +32,18 @@ const Form = ({history}) => {
   //   setpassword('');
   // }
   
+  const FormCenter = styled.div`margin-bottom: 100px;`
+  const FormTitle = styled.div`color: grey;
+  font-weight: 300;
+  margin-bottom: 50px;`
+  const FormFields = styled.div`margin-bottom: 40px;`
+
+  
+
   
   return(
-<div className="FormCenter">
-    <form onSubmit = {signup} className="FormFields">
+<FormCenter>
+    <FormFields onSubmit = {signup}>
 
 
 
@@ -81,8 +89,8 @@ const Form = ({history}) => {
                   <Link to="/sign-in" className="FormField__Link">Sign In</Link>
               </div>
               
-      </form>  
-</div>
+      </FormFields>  
+</FormCenter>
   );
 }
 
