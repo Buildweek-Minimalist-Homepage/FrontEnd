@@ -6,6 +6,7 @@ import ReturnInfo from './components/ReturnInfo';
 import {PrivateRoute} from './utils/PrivateRoute';
 import HomePage from './components/HomePage';
 import HomePageContext from './contexts/HomePageContext';
+import Header from "./components/Header"
 
 import './signInLogIn.css';
 import { axiosWithAuth } from './utils/useAxiosAuth';
@@ -29,11 +30,14 @@ function App() {
 //     setMembers([...members, member])
 //     console.log(member)
 //   }
-const SignInLogInForm = styled.div `height: 100vh; display: flex;`;
+const SignInLogInForm = styled.div `height: 100%; display: flex;`;
 const AppAside = styled.div `width: 25%;`;
-const AppForm = styled.div `margin-top: 15%;
+const AppForm = styled.div `
+display: flex;
+flex-direction: column;
+margin-top: 5%;
 width: 50%;
-height: 30%;
+height: 1%;
 background-color: darkslategrey;
 padding: 25px 40px;
 overflow: auto;`;
@@ -51,7 +55,7 @@ font-size: 1.7em;
 margin: 0 10px;
 padding-bottom: 5px;`
 */
-
+const Wraping = styled.div`box-sizing: border-box;`
 
 
 const {setHomePage} = useContext(HomePageContext);
@@ -66,10 +70,11 @@ useEffect(() => {
 
 
   return(
-    <SignInLogInForm>
-    <AppAside/>
+    <Wraping>
+    <SignInLogInForm/>
+   {/*<AppAside/>*/}
     <AppForm>
-              <FormTitle>
+              {/* <FormTitle>
                   <NavLink to="/sign-in" 
                   activeClassName="FormTitle__Link--Active" 
                   className="FormTitle__Link">Sign In</NavLink> 
@@ -77,19 +82,19 @@ useEffect(() => {
                   or <NavLink exact to="/register" 
                   activeClassName="FormTitle__Link--Active" 
                   className="FormTitle__Link">Sign Up</NavLink>
-              </FormTitle>
+              </FormTitle> */}
+              <Header/>
               <Route exact path="/register" component={Form}/>
               
               <Route exact path="/sign-in" component={SignInForm}/>
               
               {/* <ReturnInfo members ={members}/> */}
-
-
-                <Route exact path='/homepage' component={HomePage}/>
-
-              
-                </AppForm>
-    </SignInLogInForm>
+    </AppForm>
+      
+            <PrivateRoute exact path='/homepage' component={HomePage}/>
+      
+    </Wraping>
+    
   )
 }
 

@@ -11,6 +11,16 @@ import DailyQuote from "./DailyQuote"
 // const Api_Key = '6a1b99d280501714378f9277c849fca1';
 
 import {Clock} from './Time';
+import styled from "styled-components";
+
+
+const SearchBarWrap = styled.div`display: block;
+margin-top: 5%;
+margin-left:1%`
+const ClockWrap = styled.div`display: block;
+margin-top: 5%;
+margin-left:1%`
+
 
 const HomePage = () => {
   //   constructor() {
@@ -101,8 +111,12 @@ const HomePage = () => {
     return (
         <div>
             <Header/>
+            <SearchBarWrap>
             <SearchBar/>
+            </SearchBarWrap>
+            
             <Clock/>
+            
             <Todo/>
             <DailyQuote/>
             {/* <WeatherForm loadweather={this.getWeather} error={this.state.error} />

@@ -5,7 +5,14 @@ import styled from "styled-components";
 const SearchContainer = styled.div`
 position: fixed;
 top: 10px;
-left: 250px;
+left: 50px;
+border: 1px solid black;
+`
+const SearchInput = styled.input`
+display: flex;
+flex-direction: column;
+margin-top: 5%;
+width: 50%;
 `
 
 export const SearchBar = () => {

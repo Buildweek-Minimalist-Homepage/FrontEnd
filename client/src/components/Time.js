@@ -1,11 +1,9 @@
 import React, { Component} from 'react';
+import styled from 'styled-components'
 
-const TimeContainer = styled.div`
-  position: fixed;
-  bottom: 550px;
-`
 
 export class Clock extends Component {
+
     constructor() {
       super()
       this.state = {
@@ -15,8 +13,13 @@ export class Clock extends Component {
       }
     }
 
+    
     componentDidMount() {
       
+
+
+
+
       const date = new Date()
     const hours = date.getHours()
     this.setState({hours: hours})
@@ -54,13 +57,38 @@ export class Clock extends Component {
       }
     
 
-    
+            //STYLING
+            const ClockContainer = styled.div ` 
+            display: flex;
+            flex-flow: column wrap;
+            color: white;
+            background: inherit;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 25vw;
+            height: 20vh;
+            position: relative;
+            overflow: hidden;
+
+            &:before {
+              content: '';
+              background: inherit;
+              position: absolute;
+              left: -25px;
+              right: -25px;
+              top: -25px; 
+              bottom: -25px;
+              box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);
+              filter: blur(10px);
+            }
+            `;
 
     return (
-      <div>
+      <ClockContainer>
         <h1 style={h1Style}>Good {this.state.timeOfDay} </h1>
         <h2>{this.state.time}</h2>
-      </div>
+      </ClockContainer>
       )
   }
 }

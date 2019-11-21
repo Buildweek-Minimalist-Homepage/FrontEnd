@@ -8,7 +8,7 @@ import styled, { css } from 'styled-components'
 
 import './signInLogIn.css';
 
-
+/*
 const SignInLogInForm = styled.div `height: 100vh; display: flex;`;
 const AppAside = styled.div `width: 25%;`;
 const AppForm = styled.div `margin-top: 15%;
@@ -21,7 +21,7 @@ const FormTitle = styled.nav`color: grey;
 font-weight: 300;
 margin-bottom: 50px;`
 
-
+*/
 
 
 const 
