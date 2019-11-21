@@ -6,7 +6,7 @@ function ReturnInfo(props) {
       console.log (`key = ${member.id}
           Name: ${member.name}
           Email:${member.email}
-          Role: ${member.role}`)
+          Password: ${member.password}`)
       )
     )
   )

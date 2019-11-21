@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {axiosWithAuth} from '../utils/useAxiosAuth';
-
+import styled, { css } from 'styled-components'
 
 
 
@@ -32,10 +32,18 @@ const Form = ({history}) => {
   //   setpassword('');
   // }
   
+  const FormCenter = styled.div`margin-bottom: 100px;`
+  const FormTitle = styled.div`color: grey;
+  font-weight: 300;
+  margin-bottom: 50px;`
+  const FormFields = styled.div`margin-bottom: 40px;`
+
+  
+
   
   return(
-<div className="FormCenter">
-    <form onSubmit = {signup} className="FormFields">
+<FormCenter>
+    <FormFields onSubmit = {signup}>
 
 
 
@@ -46,7 +54,7 @@ const Form = ({history}) => {
         name = "name"
         type = "text"
         placeholder="Enter your full name"
-        // className="FormField__Input" 
+        className="FormField__Input" 
         value={creds.name}
         required onChange = {handleChange}/>
         </div>
@@ -57,7 +65,7 @@ const Form = ({history}) => {
         id = "email"
         name = "email"
         type = "email"
-        // className="FormField__Input" 
+        className="FormField__Input" 
         placeholder="Enter your email"
         value = {creds.email}
         required onChange = {handleChange}/>
@@ -70,7 +78,7 @@ const Form = ({history}) => {
         name = "password"
         type = "text"
         value = {creds.password}
-        // className="FormField__Input" 
+        className="FormField__Input" 
         placeholder="Enter your password"
         required onChange = {handleChange}/>
         </div>
@@ -83,8 +91,8 @@ const Form = ({history}) => {
                   <Link to="/sign-in" className="FormField__Link">Sign In</Link>
               </div>
               
-      </form>  
-</div>
+      </FormFields>  
+</FormCenter>
   );
 }
 

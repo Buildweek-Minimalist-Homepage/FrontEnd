@@ -25,7 +25,7 @@ const SignInForm = ({history}) => {
         history.push('/homepage');
       })
       .catch(err => console.error(err));
-  };
+  }; 
   // const [name, setName] = useState('')
   // const [email, setEmail] = useState('')
   // const [password, setpassword] = useState('')
@@ -39,11 +39,8 @@ const SignInForm = ({history}) => {
   //handle component with one useState (optional)
   
   return(
-
   <div className="FormCenter">
     <form onSubmit = {login} className="FormFields">
-
-
 
       <div className="FormField">
       
@@ -51,7 +48,7 @@ const SignInForm = ({history}) => {
         id = "email"
         name = "email"
         type = "email"
-        // className="FormField__Input" 
+        className="FormField__Input" 
         placeholder="Enter your email"
         value = {creds.email}
         onChange = {handleChange}/>
@@ -64,7 +61,7 @@ const SignInForm = ({history}) => {
         name = "password"
         type = "password"
         value = {creds.password}
-        // className="FormField__Input" 
+        className="FormField__Input" 
         placeholder="Enter your password"
         onChange = {handleChange}/>
         </div>
