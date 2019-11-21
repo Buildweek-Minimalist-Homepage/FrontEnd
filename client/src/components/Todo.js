@@ -1,5 +1,11 @@
 import React, {useReducer, useRef} from 'react';
 import {reducer, initialState} from '../reducers/reducer';
+import styled from 'styled-components';
+
+const TodoContainer = styled.div`
+  position: fixed;
+  bottom: 200px;
+`
 
 const Todo = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -12,7 +18,7 @@ const Todo = () => {
     };
 
     return (
-        <div>
+        <TodoContainer>
             <form onSubmit={handleSubmit}>
                 <input type='text' name='todo' ref={inputRef} placeholder='...todo'/>
                 <button>Add Todo</button>
@@ -33,7 +39,7 @@ const Todo = () => {
                 : null}
             </ul>
             <button onClick={() => dispatch({type: 'CLEAR'})}>Clear</button>
-        </div>
+        </TodoContainer>
     );
 };
 
