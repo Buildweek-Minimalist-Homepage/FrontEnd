@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import useDarkMode from './hooks/useDarkMode';
+import '../App.css';
 
 const NavBar = styled.div`
     display: flex;
@@ -8,12 +10,12 @@ const NavBar = styled.div`
     width: 600px;
     border: 0;
     margin: 0 auto;
+    margin-left: 40rem;
+    padding-top: 2rem;
 `
 
 const LinkHolders = styled.a`
     font-size: 30px;
-    line-height: 35px;
-    height: 70px;
     text-align: center;
     text-decoration: none;
     padding-left: 10px;
@@ -22,16 +24,30 @@ const LinkHolders = styled.a`
     color: white;
 `
 
-export default class Header extends Component {
-    render(){
+const Header = () => {
+    const [darkMode, setDarkMode] = useDarkMode();
+    const toggleMode = e => {
+      e.preventDefault();
+      setDarkMode(!darkMode);
+    };
+
+
         return (
         <NavBar>
             <nav className='header-nav'>
-                <NavLink to='/homepage' className='header-links'><LinkHolders>Home</LinkHolders></NavLink>
+                {/* <NavLink to='/homepage' className='header-links'><LinkHolders>Home</LinkHolders></NavLink>
                 <NavLink to='/' className='header-links'><LinkHolders>Login</LinkHolders></NavLink>
-                <NavLink to='/register' classname='header-links'><LinkHolders>Register</LinkHolders></NavLink>
+                <NavLink to='/register' classname='header-links'><LinkHolders>Register</LinkHolders></NavLink> */}
+            <div className="dark-mode__toggle">
+                <div
+                    onClick={toggleMode}
+                    className={darkMode ? 'toggle toggled' : 'toggle'}
+                />
+            </div>
             </nav>
         </NavBar>
         )
-    }
+
 }
+
+export default Header

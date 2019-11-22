@@ -6,6 +6,7 @@ import styled from "styled-components";
 const QuoteContainer = styled.div`
   position: fixed;
   bottom: 10px;
+  margin-left: 40rem;
 `
 
 const QuoteCard = styled.div`

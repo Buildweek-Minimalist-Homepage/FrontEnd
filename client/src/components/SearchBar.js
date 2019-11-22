@@ -6,6 +6,7 @@ const SearchContainer = styled.div`
     position: fixed;
     top: 10px;
     left: 50px;
+    padding-top: 2rem;
 `
 
 const SearchButton = styled.button`
@@ -30,6 +31,7 @@ const SearchInput = styled.input`
     padding: 10px;
     background: transparent;
     color: black;
+
 `
 
 export const SearchBar = () => {

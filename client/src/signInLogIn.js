@@ -24,7 +24,7 @@ margin-bottom: 50px;`
 */
 
 
-const 
+
 function SignInLogIn() {
   //applying a useState hook and setting a state peoperty to members
  const [members, setMembers] = useState([]);

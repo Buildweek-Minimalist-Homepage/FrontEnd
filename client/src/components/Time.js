@@ -71,6 +71,7 @@ export class Clock extends Component {
             height: 35vh;
             position: relative;
             overflow: hidden;
+            margin-left: 43rem;
 
             &:before {
               content: '';

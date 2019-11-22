@@ -9,13 +9,21 @@ import WeatherApp from './WeatherApp';
 import {Clock} from './Time';
 import styled from "styled-components";
 
-
+const TopWidgetBar = styled.div`
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+`
 const SearchBarWrap = styled.div`display: block;
-margin-top: 5%;
-margin-left:1%`
+    margin-top: 5%;
+    margin-left:1%;
+`
+
 const ClockWrap = styled.div`display: block;
-margin-top: 5%;
-margin-left:1%`
+    margin-top: 5%;
+    margin-left:1%;
+`
 
 
 const HomePage = () => {
@@ -24,13 +32,13 @@ const HomePage = () => {
      
     return (
         <div>
-            <div>
+            <TopWidgetBar>
                 <SearchBarWrap>
                     <SearchBar/>
                 </SearchBarWrap>
                 <Header/>
                 <WeatherApp/>
-            </div>
+            </TopWidgetBar>
 
             <div>
                 <Clock/>

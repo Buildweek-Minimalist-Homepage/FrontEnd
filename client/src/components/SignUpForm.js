@@ -24,6 +24,7 @@ const Wraping = styled.div`
 
 
 const Form = ({history}) => {
+
   const [creds, setCreds] = useState({ name: '', email: '', password: ''});
 
   const handleChange = e => {
@@ -32,12 +33,14 @@ const Form = ({history}) => {
 
   const signup = e => {
     e.preventDefault();
-    
+        if(creds.name.length ===0 || creds.email.length === 0|| creds.password.length ===0){
+            alert("Youre missing something there")
+        }
+
     console.log(creds);
     axiosWithAuth().post('/auth/register', creds)
       .then(res => {
         console.log(res.data);
-        history.push('/login');
       })
       .catch(err => console.error(err));
   };
@@ -90,6 +93,23 @@ const Form = ({history}) => {
                 value = {creds.password}
                 className="FormField__Input" 
                 placeholder="Enter your password"
+                name = "email"
+                type = "email"
+                className="FormField__Input" 
+                placeholder="Enter your email"
+                value = {creds.email}
+                required onChange = {handleChange}/>
+            </div>
+
+            <div className="FormField">
+              <label htmlFor = "password" className="FormField__Label">password</label>
+              <input 
+                id = "password"
+                name = "password"
+                type = "password"
+                value = {creds.password}
+
+                plac
                 required onChange = {handleChange}/>
             </div>
               

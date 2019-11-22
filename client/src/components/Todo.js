@@ -21,6 +21,7 @@ const TodoContainer = styled.div`
   right: 10px;
   height: 300px;
   width: 400px;
+  margin-right: 1rem;
 `
 
 const TodoCard = styled.div`
