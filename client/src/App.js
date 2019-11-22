@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Form from './components/SignUpForm';
-import {Route, NavLink } from 'react-router-dom';
+import {Route } from 'react-router-dom';
 import SignInForm from './components/SignInForm';
-import ReturnInfo from './components/ReturnInfo';
+
 import {PrivateRoute} from './utils/PrivateRoute';
 import HomePage from './components/HomePage';
 import HomePageContext from './contexts/HomePageContext';
-import Header from "./components/Header"
+
 import './App.css';
 
 import './signInLogIn.css';
 import { axiosWithAuth } from './utils/useAxiosAuth';
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 function App() {
 //   //applying a useState hook and setting a state peoperty to members
@@ -33,19 +33,20 @@ function App() {
 //     console.log(member)
 //   }
 const SignInLogInForm = styled.div `height: 100%; display: flex;`;
-const AppAside = styled.div `width: 25%;`;
-const AppForm = styled.div `
-display: flex;
-flex-direction: column;
-margin-top: 5%;
-width: 50%;
-height: 1%;
-background-color: darkslategrey;
-padding: 25px 40px;
-overflow: auto;`;
-const FormTitle = styled.nav`color: grey;
-font-weight: 300;
-margin-bottom: 50px;`
+// const AppAside = styled.div `width: 25%;`;
+// const AppForm = styled.div `
+// display: flex;
+// flex-direction: column;
+// margin-top: 5%;
+// width: 50%;
+// height: 1%;
+// background-color: darkslategrey;
+// padding: 25px 40px;
+// overflow: auto;`;
+
+// const FormTitle = styled.nav`color: grey;
+// font-weight: 300;
+// margin-bottom: 50px;`
 /*const FormTitleLinkActive  = {
   color: 'white',
   borderBottom: '1px solid white'
@@ -89,10 +90,11 @@ useEffect(() => {
 
               
               {/* <ReturnInfo members ={members}/> */}
-    {/* </AppForm> */}
-              <Route exact path="/register" component={Form}/>
-              
-              <Route exact path="/" component={SignInForm}/>
+     {/* </AppForm> */}
+            <Route exact path="/register" component={Form}/>
+            
+            <Route exact path="/" component={SignInForm}/>
+
             <PrivateRoute exact path='/homepage' component={HomePage}/>
       
     </Wraping>

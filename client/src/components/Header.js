@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
 import useDarkMode from './hooks/useDarkMode';
 
@@ -14,15 +13,15 @@ const NavBar = styled.div`
     padding-top: 2rem;
 `
 
-const LinkHolders = styled.a`
-    font-size: 30px;
-    text-align: center;
-    text-decoration: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    background: transparent;
-    color: white;
-`
+// const LinkHolders = styled.a`
+//     font-size: 30px;
+//     text-align: center;
+//     text-decoration: none;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     background: transparent;
+//     color: white;
+// `
 
 const Header = () => {
     const [darkMode, setDarkMode] = useDarkMode();
