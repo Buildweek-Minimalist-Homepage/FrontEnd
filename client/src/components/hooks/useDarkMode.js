@@ -6,12 +6,14 @@ const useDarkMode = () => {
 
     useEffect(() => {
         if(isDarkMode === true) {
-            document.body.classList.remove('dark-mode')
+            document.body.classList.add('dark-mode')
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?urban,night')";
         }
         else {
             document.body.classList.remove('dark-mode')
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?animals,day')";
         }
-    }, {isDarkMode})
+    }, [isDarkMode])
 
     return [isDarkMode, setIsDarkMode]
 }

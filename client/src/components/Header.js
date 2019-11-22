@@ -35,9 +35,7 @@ const Header = () => {
         return (
         <NavBar>
             <nav className='header-nav'>
-                {/* <NavLink to='/homepage' className='header-links'><LinkHolders>Home</LinkHolders></NavLink>
-                <NavLink to='/' className='header-links'><LinkHolders>Login</LinkHolders></NavLink>
-                <NavLink to='/register' classname='header-links'><LinkHolders>Register</LinkHolders></NavLink> */}
+
             <div className="dark-mode__toggle">
                 <div
                     onClick={toggleMode}
