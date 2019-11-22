@@ -53,21 +53,22 @@ export class Clock extends Component {
     }
     render () {
       const h1Style = {
-        fontSize: '40px',
+        fontSize: '60px',
       }
     
+
 
             //STYLING
             const ClockContainer = styled.div ` 
             display: flex;
             flex-flow: column wrap;
+            justify-content: space-around;
             color: white;
             background: inherit;
             align-items: center;
-            border: 1px solid black;
             border-radius: 5px;
             width: 25vw;
-            height: 20vh;
+            height: 35vh;
             position: relative;
             overflow: hidden;
 
@@ -84,10 +85,14 @@ export class Clock extends Component {
             }
             `;
 
+            const H2Style = styled.h2`
+              font-size: 40px;
+            `
+
     return (
       <ClockContainer>
         <h1 style={h1Style}>Good {this.state.timeOfDay} </h1>
-        <h2>{this.state.time}</h2>
+        <H2Style>{this.state.time}</H2Style>
       </ClockContainer>
       )
   }

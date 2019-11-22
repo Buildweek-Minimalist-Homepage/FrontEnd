@@ -7,6 +7,7 @@ import {PrivateRoute} from './utils/PrivateRoute';
 import HomePage from './components/HomePage';
 import HomePageContext from './contexts/HomePageContext';
 import Header from "./components/Header"
+import './App.css';
 
 import './signInLogIn.css';
 import { axiosWithAuth } from './utils/useAxiosAuth';
@@ -73,7 +74,7 @@ useEffect(() => {
     <Wraping>
     <SignInLogInForm/>
    {/*<AppAside/>*/}
-    <AppForm>
+    {/* <AppForm> */}
               {/* <FormTitle>
                   <NavLink to="/sign-in" 
                   activeClassName="FormTitle__Link--Active" 
@@ -83,14 +84,14 @@ useEffect(() => {
                   activeClassName="FormTitle__Link--Active" 
                   className="FormTitle__Link">Sign Up</NavLink>
               </FormTitle> */}
-              <Header/>
-              <Route exact path="/register" component={Form}/>
-              
-              <Route exact path="/sign-in" component={SignInForm}/>
+
+
               
               {/* <ReturnInfo members ={members}/> */}
-    </AppForm>
-      
+    {/* </AppForm> */}
+              <Route exact path="/register" component={Form}/>
+              
+              <Route exact path="/" component={SignInForm}/>
             <PrivateRoute exact path='/homepage' component={HomePage}/>
       
     </Wraping>

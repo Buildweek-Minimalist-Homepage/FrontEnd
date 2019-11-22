@@ -4,8 +4,8 @@ import { array } from 'prop-types';
 import styled from "styled-components";
 
 const QuoteContainer = styled.div`
-position: fixed;
-bottom: 10px;
+  position: fixed;
+  bottom: 10px;
 `
 
 const QuoteCard = styled.div`
