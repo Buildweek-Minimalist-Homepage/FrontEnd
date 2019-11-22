@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import useDarkMode from './hooks/useDarkMode';
-import '../App.css';
+
 
 const NavBar = styled.div`
     display: flex;

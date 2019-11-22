@@ -28,9 +28,9 @@ const SignInForm = ({history}) => {
 
   const login = e => {
     e.preventDefault();
-        if(creds.email.length ===3 || creds.password.length ===3){
+        /* if(creds.email.length ===3 || creds.password.length ===3){
             alert("Youre missing something there")
-        }
+        } */
 
     axiosWithAuth()
       .post('/auth/login', creds)

@@ -93,25 +93,12 @@ const Form = ({history}) => {
                 value = {creds.password}
                 className="FormField__Input" 
                 placeholder="Enter your password"
-                name = "email"
-                type = "email"
-                className="FormField__Input" 
-                placeholder="Enter your email"
-                value = {creds.email}
                 required onChange = {handleChange}/>
             </div>
 
-            <div className="FormField">
-              <label htmlFor = "password" className="FormField__Label">password</label>
-              <input 
-                id = "password"
-                name = "password"
-                type = "password"
-                value = {creds.password}
+           
 
-                plac
-                required onChange = {handleChange}/>
-            </div>
+
               
             <div className="FormField">
               <Link to='/'>
